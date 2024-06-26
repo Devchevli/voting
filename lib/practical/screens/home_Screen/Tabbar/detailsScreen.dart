@@ -64,7 +64,7 @@ class _Detail_ScreenState extends State<Detail_Screen> {
                         );
                       },
                       child: SizedBox(
-                        height: 250,
+                        height: 220,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [

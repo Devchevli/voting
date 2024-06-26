@@ -14,7 +14,6 @@ class VotingScreen extends StatefulWidget {
 class _VotingScreenState extends State<VotingScreen> {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
         children: [
@@ -28,21 +27,24 @@ class _VotingScreenState extends State<VotingScreen> {
                     color: Colors.grey,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  height: 160,
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                  height: 140,
                   child: Center(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Row(
                           children: [
-                            Text(
-                              '$index).',
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.w400),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Text(
+                                '${index + 1}.',
+                                style: const TextStyle(
+                                    fontSize: 22, fontWeight: FontWeight.w400),
+                              ),
                             ),
-                            const SizedBox(
-                              width: 30,
-                            ),
+                            const SizedBox(width: 30),
                             Text(
                               item.name ?? 'No Name',
                               style: const TextStyle(
@@ -50,21 +52,30 @@ class _VotingScreenState extends State<VotingScreen> {
                             ),
                           ],
                         ),
+                        const SizedBox(height: 10),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Container(
-                              height: 20,
-                              width: 20,
-                              color: Colors.black,
+                              height: 60,
+                              width: 200,
+                              decoration: const BoxDecoration(
+                                color: Colors.black,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20)),
+                              ),
                             ),
                             Container(
-                              height: 20,
-                              width: 20,
-                              color: Colors.black,
+                              height: 60,
+                              width: 200,
+                              decoration: const BoxDecoration(
+                                color: Colors.black,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20)),
+                              ),
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
